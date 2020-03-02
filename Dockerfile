@@ -6,6 +6,4 @@ ARG KUSTOMIZE_URL="https://github.com/kubernetes-sigs/kustomize/releases/downloa
 RUN curl -L $KUSTOMIZE_URL | tar zxf - && \
     mv kustomize /usr/local/bin
 
-LABEL com.circleci.preserve-entrypoint=true
-COPY entrypoint.sh /
-ENTRYPOINT ["/entrypoint.sh"]
+COPY auth.sh /
